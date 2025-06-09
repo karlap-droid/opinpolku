@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Luo linkki postaukseen
   const link = document.createElement("a"); // korjattu elementin tyyppi
   link.href = "#"; // estää oletusnavigoinnin
-  link.textContent = "Oppiminen alkaa";
+  link.textContent = "Oppiminen aloitettu";
 
   link.addEventListener("click", (event) => {
     event.preventDefault(); // estä sivun uudelleenlataus
