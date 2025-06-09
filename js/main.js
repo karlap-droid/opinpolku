@@ -1,16 +1,16 @@
 // Odota että koko HTML on ladattu ennen kuin JS alkaa toimia
-document.addEventListener("DOMContentLoaded, () => {
+document.addEventListener("DOMContentLoaded", () => {
       // Etsi postauslistalle tarkoitettu elementti
       const postausLista = document.getElementById("postauslista");
 
       //Luo linkki postaukseen
-      const link = document.createElementById("postauslista");
+      const link = document.createElement("postauslista");
       link.href = "#"; //estää oletusnavigoinnin
       link.textContent = "Oppiminen alkaa";
       link.addEventListener("click", (event) => {
-          event.prevent.Default(); //estä sivun uudelleenlataus
+          event.preventDefault(); //estä sivun uudelleenlataus
           // lataa sisältö tiedostosta
-          fetch("1")
+          fetch("blogipostaus/1")
             .then(response => {
               if (!response.ok) {
                 throw new Error("Tapahtui virhe");
@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded, () => {
               document.getElementById("sisalto").innerHTML = html;
             })
             .catch(error => {
-              document.getElementById("sisalto").innerHTML = <p>Virhe: ${error.message}</p>;
+              document.getElementById("sisalto").innerHTML = '<p>Virhe: ${error.message}</p>';
             });
       });
-      postList.appendChild(link);
+      postauslista.appendChild(link);
 });
