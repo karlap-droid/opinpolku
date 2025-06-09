@@ -1,32 +1,31 @@
-// Odota että koko HTML on ladattu ennen kuin JS alkaa toimia
 document.addEventListener("DOMContentLoaded", () => {
-  // Etsi postauslistalle tarkoitettu elementti
   const postausLista = document.getElementById("postauslista");
+  postausLista.textContent = ""; // tyhjennä "Ladataan..."
 
-  // Luo linkki postaukseen
-  const link = document.createElement("a"); // korjattu elementin tyyppi
-  link.href = "#"; // estää oletusnavigoinnin
-  link.textContent = "Oppiminen aloitettu";
+  const postauksia = 5; // montako postausta on olemassa
 
-  link.addEventListener("click", (event) => {
-    event.preventDefault(); // estä sivun uudelleenlataus
-
-    // lataa sisältö tiedostosta
-    fetch("blogipostaus/1.html")
+  for (let i = 1; i <= postauksia; i++) {
+    fetch(`blogipostaus/${i}.html`)
       .then(response => {
-        if (!response.ok) {
-          throw new Error("Tapahtui virhe");
-        }
+        if (!response.ok) throw new Error("Ei ladattu: " + i);
         return response.text();
       })
       .then(html => {
-        document.getElementById("sisalto").innerHTML = html;
+        const otsikko = html.match(/<h1>(.*?)<\/h1>/i)?.[1] || `Postaus ${i}`;
+
+        const linkki = document.createElement("a");
+        linkki.href = "#";
+        linkki.textContent = otsikko;
+        linkki.addEventListener("click", (event) => {
+          event.preventDefault();
+          document.getElementById("sisalto").innerHTML = html;
+        });
+
+        postausLista.appendChild(linkki);
+        postausLista.appendChild(document.createElement("br"));
       })
       .catch(error => {
-        document.getElementById("sisalto").innerHTML = `<p>Virhe: ${error.message}</p>`;
+        console.warn(`Postausta ${i} ei löytynyt`, error);
       });
-  });
-
-  postausLista.textContent = ""; // tyhjennetään "Ladataan..."
-  postausLista.appendChild(link);
+  }
 });
