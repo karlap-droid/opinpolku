@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => {
               if (!response.ok) {
                 throw new Error("Tapahtui virhe");
-              }
+              })
               return response.text();
-            )
             .then(html => {
               document.getElementById("sisalto").innerHTML = html;
             })
