@@ -14,11 +14,8 @@ body {
   padding: 1rem;
 }
 
-#sisalto {
-  background-color: #f0f0f0;
-}
-
 main {
+  background-color: #ffffff;
   flex: 1;
   padding: 1rem;
 }
