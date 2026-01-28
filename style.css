@@ -13,7 +13,11 @@ body {
   padding: 1rem;
 }
 
-#main {
+#otsikko {
+  gap: 6rem;
+}
+
+main {
   background-color: #000000;
   flex: 1;
   padding: 1rem;
