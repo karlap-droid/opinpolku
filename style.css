@@ -1,11 +1,11 @@
 body {
   margin: 0;
   font-family: papyrus;
+  background-color: #000000;
 }
 #layout {
   display: flex;
   gap: 1rem;
-  background-color: #000000;
 }
 
 #sivupalkki {
