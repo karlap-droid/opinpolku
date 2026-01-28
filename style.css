@@ -2,10 +2,10 @@ body {
   margin: 0;
   font-family: papyrus;
 }
-#layout {
+/* #layout {
   display: flex;
   gap: 1rem;
-}
+} */
 
 #sivupalkki {
   width: 250px;
