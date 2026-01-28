@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postausLista = document.getElementById("postauslista");
   postausLista.textContent = ""; // tyhjennä "Ladataan..."
 
-  const postauksia = 2; // montako postausta on olemassa
+  const postauksia = 3; // montako postausta on olemassa
   //hakee kaikki postaukset listaan
   for (let i = 1; i <= postauksia; i++) {
     fetch(`blogipostaus/${i}.html`)
