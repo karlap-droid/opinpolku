@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /*tarkista tää vielä*/
+  background-color: #f0f0f0;
+}
+#layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+  
+}
+
+#sivupalkki {
+  width: 250px;
+  background-color: #fff0f0;
+  padding: 1rem;
+}
+
+#sivupalkki h2 {
+  margin-top: 0;
+}
+
+#postauslista div {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+  main {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+main p { /*tsekkaa tääkin*/
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
