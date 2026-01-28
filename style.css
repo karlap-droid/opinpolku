@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: papyrus;
+  backgroud-color: #f0f0f0;
 }
 #layout {
   display: flex;
@@ -18,7 +19,7 @@ body {
 } */
 
 main {
-  background-color: #f0f0f0;
+  background-color: #000000;
   flex: 1;
   padding: 1rem;
 }
